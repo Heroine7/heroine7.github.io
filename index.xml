@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Orianna</title>
+    <title>Heroine77</title>
     <link>https://heroine7.github.io/</link>
-    <description>Recent content on Orianna</description>
+    <description>Recent content on Heroine77</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Thu, 13 Sep 2018 22:31:21 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 26 Apr 2020 10:45:23 +0800</lastBuildDate>
     
 	<atom:link href="https://heroine7.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>A</title>
+      <link>https://heroine7.github.io/post/a/</link>
+      <pubDate>Sun, 26 Apr 2020 10:45:23 +0800</pubDate>
+      
+      <guid>https://heroine7.github.io/post/a/</guid>
+      <description>略略略略略略</description>
+    </item>
     
     <item>
       <title>Blog养成记(14) 让同页滚动更平滑</title>
