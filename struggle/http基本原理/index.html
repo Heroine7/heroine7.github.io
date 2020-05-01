@@ -287,7 +287,7 @@
   <ul class="post-meta li-x">
     
       
-        <li><a href="https://heroine7.github.io/categories/%E8%8F%9C%E8%8F%9C%E8%BF%9B%E9%98%B6"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> 菜菜进阶 </a></li>
+        <li><a href="https://heroine7.github.io/categories/%E8%8F%9C%E8%8F%9C%E4%BD%A0%E8%AF%A5%E5%8A%AA%E5%8A%9B%E5%91%80"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> 菜菜你该努力呀 </a></li>
       
     
     
@@ -306,9 +306,13 @@
 
     
       <li class="middot"></li>
-      <li>6 minutes read</li>
+      <li>9 minutes read</li>
     
   </ul>
+  
+    <div class="view">
+      <img src="https://heroine7.github.io/images/struggle/2020-04-29/2001759.jpg" />
+    </div>
   
 
 </div>
@@ -347,30 +351,9 @@
 <p><img src="https://heroine7.github.io/images/struggle/2020-04-29/a.png" alt="TCP/IP协议参考模型"></p>
 <h2 id="http请求响应模型">HTTP请求响应模型</h2>
 <p>HTTP由请求和响应构成，是一个标准的客户端服务器模型（B/S）。HTTP协议永远都是客户端发起请求，服务器回送响应。见下图:</p>
-<p><img src="https://heroine7.github.io/images/struggle/2020-04-29/HTTP%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94%E6%A8%A1%E5%9E%8B.jpg" alt="HTTP由请求响应模型"></p>
-<p>HTTP是一个无状态的协议。无状态是指客户机（Web浏览器）和服务器之间不需要建立持久的连接，这意味着当一个客户端向服务器端发出请求，然后服务器返回响应(response)，连接就被关闭了，在服务器端不保留连接的有关信息.HTTP遵循请求(Request)/应答(Response)模型。客户机（浏览器）向服务器发送请求，服务器处理请求并返回适当的应答。所有HTTP连接都被构造成一套请求和应答。</p>
-<p>常见的请求方法：</p>
-<table>
-<thead>
-<tr>
-<th align="center">方法</th>
-<th align="center">说明</th>
-<th align="center">特点</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">GET</td>
-<td align="center">常用于从服务器<strong>获取数据</strong></td>
-<td align="center">请求数据在URL中（header）,传输数据量小，支持缓存</td>
-</tr>
-<tr>
-<td align="center">POST</td>
-<td align="center">常用于向服务器<strong>发送数据</strong></td>
-<td align="center">请求数据在body中，传输数据量大，不缓存</td>
-</tr>
-</tbody>
-</table>
+<p><img src="https://heroine7.github.io/images/struggle/2020-04-29/HTTP%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94%E6%A8%A1%E5%9E%8B.jpg" alt="HTT请求响应模型"></p>
+<p>HTTP是一个无状态的协议。无状态是指客户机（Web浏览器）和服务器之间不需要建立持久的连接，这意味着当一个客户端向服务器端发出请求，然后服务器返回响应(response)，连接就被关闭了，在服务器端不保留连接的有关信息，但随着web的发展，很多业务需要对通信状态进行保存，于是引入了<code>Cookie</code>技术，通过在请求和响应报文中写入Cookie信息来控制客户端的状态。</p>
+<p>HTTP遵循请求(Request)/应答(Response)模型。客户机（浏览器）向服务器发送请求，服务器处理请求并返回适当的应答。所有HTTP连接都被构造成一套<a href="https://www.cnblogs.com/ldq2016/p/9055933.html">请求和应答</a>。</p>
 <h2 id="http工作过程">HTTP工作过程</h2>
 <p>一次HTTP操作称为一个事务，其工作整个过程如下：</p>
 <ol>
@@ -394,11 +377,66 @@
 </li>
 <li>
 <p>客户机发送请求命令
-建立连接后，客户机发送一个请求给服务器，请求方式的格式为：统一资源标识符（URL）、协议版本号，后边是MIME信息包括请求修饰符、客户机信息和可内容。</p>
+建立连接后，客户机发送一个请求给服务器客户端会给服务器发出一个请求报文，<strong>请求报文</strong>由四个部分组成：请求行、请求头部、空行、请求数据。
+<img src="https://heroine7.github.io/images/struggle/2020-04-29/%E8%AF%B7%E6%B1%82%E6%8A%A5%E6%96%871.png" alt="请求报文"></p>
+<p><img src="https://heroine7.github.io/images/struggle/2020-04-29/%E8%AF%B7%E6%B1%82%E6%8A%A5%E6%96%872.png" alt="请求报文"></p>
+<ul>
+<li>
+<p>请求行 <br>
+前三行为请求行，请求行由请求方法字段、URL字段和HTTP协议版本3个字段组成，由空格分隔。比如 GET/data/info.html HTTP/1.1</p>
+<p>方法字段就是HTTP所用的<a href="https://www.runoob.com/http/http-methods.html">请求方法</a>，如option，get，post，head，put，delete，trace等，常用的主要是get，post；方法之后是URI，表示请求的页面地址，图中的“/”表示服务器的根目录；之后是表示<a href="https://www.cnblogs.com/luck-pig/p/12006908.html">http的版本</a>。</p>
+<p>常用的请求方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">说明</th>
+<th align="center">特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">GET</td>
+<td align="center">常用于从服务器<strong>获取数据</strong></td>
+<td align="center">请求数据在URL中（header）,传输数据量小，支持缓存</td>
+</tr>
+<tr>
+<td align="center">POST</td>
+<td align="center">常用于向服务器<strong>发送数据</strong></td>
+<td align="center">请求数据在body中，传输数据量大，不缓存</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>请求首部
+主要包括表示请求的各种条件和属性的各类首部，大多数请求头不是必须的，但对于post来说Content-Length必须出现。常见的请求头字段含义：</p>
+<p>Accept：请求的对象类型。如果是“/”表示任意类型，如果是指定的类型，则会变成“type/”。</p>
+<p>Accept-Language：使用的语言种类。</p>
+<p>Accept-Encording：页面编码种类。</p>
+<p>Accept-Charset：页面字符集。说到这里，需要解释以下字符集和编码的区别。字符集通常对应着一种语言，将语言中的所有字符集合起来就可以视为一种字符集，这样我们可以看出，中文并非是一种字符集，因为中文无法使用一些字符来进行表示；而编码则是将字符转换为计算机所能识别的2进制数的一种方式，例如常说的unicode，UTF-8，ANSI等等，我们在访问一些国外网站会出现乱码的原因就是因为我们浏览器所使用的编码与页面所使用的编码不能互相识别。我们常说的BIG5和GB2312都是编码。</p>
+<p>User-Agent：提供了客户端浏览器的类型和版本。</p>
+<p>Host：连接的目标主机，如果连接的服务器是非标准端口，在这里会出现使用的非标准端口。</p>
+<p>Connection：对于HTTP连接的处理，keep-alive表示保持连接，如果是在响应报文中发送页面完毕就会关闭连接，状态变为close。</p>
+</li>
+<li>
+<p>空行
+通过一个空行告诉服务器请求头部到此为止。</p>
+</li>
+<li>
+<p>请求数据
+若方法字段是get，则此项为空，没有数据;若方法字段是POST,则通常来说此处放置的就是要提交的数据。比如要使用POST方法提交一个表单，其中有user字段中数据为“admin”, password字段为123456，那么这里的请求数据就是 user=admin&amp;password=123456，使用&amp;来连接各个字段。</p>
+</li>
+</ul>
 </li>
 <li>
 <p>服务器响应
-服务器接到请求后，给予相应的响应信息，其格式为一个状态行，包括信息的协议版本号、一个成功或错误的代码，后边是MIME信息包括服务器信息、实体信息和可能的内容。</p>
+服务器接到请求后，给予相应的响应信息，其格式为一个状态行，包括信息的协议版本号、一个成功或错误的代码，后边是MIME信息包括服务器信息、实体信息和可能的内容。HTTP<strong>响应报文</strong>也由三部分组成：响应行、响应头、响应体：
+<img src="https://heroine7.github.io/images/struggle/2020-04-29/%E5%93%8D%E5%BA%94%E6%8A%A5%E6%96%87.png" alt="响应报文"></p>
+<ul>
+<li>
+<p>响应行
+响应行一般由协议版本、状态码及其描述组成 比如 HTTP/1.1 200 OK，其中协议版本HTTP/1.1或者HTTP/1.0，200就是它的状态码，OK则为它的描述。</p>
 <p>常见状态码：</p>
 <table>
 <thead>
@@ -426,7 +464,17 @@
 </tr>
 </tbody>
 </table>
-<p>实体消息是服务器向浏览器发送头信息后，它会发送一个空白行来表示头信息的发送到此为结束，接着，它就以Content-Type应答头信息所描述的格式发送用户所请求的实际数据</p>
+</li>
+<li>
+<p>响应头
+响应头用于描述服务器的基本信息，以及数据的描述，服务器通过这些数据的描述信息，可以通知客户端如何处理等一会儿它回送的数据。<br>
+<a href="https://www.runoob.com/http/http-header-fields.html">常见的响应头字段含义</a>。</p>
+</li>
+<li>
+<p>响应体
+响应体就是响应的消息体，如果是纯数据就是返回纯数据，如果请求的是HTML页面，那么返回的就是HTML代码，如果是JS就是JS代码，如此之类。</p>
+</li>
+</ul>
 </li>
 <li>
 <p>服务器关闭TCP连接
@@ -442,6 +490,11 @@ TCP连接在发送后将仍然保持打开状态，于是，浏览器可以继�
 <p><strong>客户机发起一次请求的时候：</strong></p>
 <p>客户机会将请求封装成http数据包&ndash;&gt;封装成Tcp数据包&ndash;&gt;封装成Ip数据包&mdash;&gt;封装成数据帧&mdash;&gt;硬件将帧数据转换成bit流（二进制数据）&ndash;&gt;最后通过物理硬件（网卡芯片）发送到指定地点。</p>
 <p>服务器硬件首先收到bit流,然后转换成ip数据包。于是通过ip协议解析Ip数据包，然后又发现里面是tcp数据包，就通过tcp协议解析Tcp数据包，接着发现是http数据包通过http协议再解析http数据包得到数据。</p>
+<h2 id="总结">总结</h2>
+<p>当A主机向B主机发起一次http请求：</p>
+<p>应用HTTP协议时，发出请求的一端为客户端，B主机响应该请求所以此时B主机担任服务器角色。</p>
+<p>A主机把自己的要求封装成http数据包，交给传输层（根据OSI,该层的上三层主要负责数据处理，下三层负责数据通信，承上启下），传输层将数据分成若干个包（加上端口号），然后交给网络层，网络层将传输层的数据加上自己的IP地址和对方的IP地址，采用ARP协议获取MAC地址，知道Mac地址之后，交换机或者路由器，会把数据发送到下一跳的节点，数据链路层会把网络层的获得Mac数据加到帧的头部，封装成数据帧，硬件将帧数据转换成bit流（二进制数据），最后通过物理介质传输比特流。</p>
+<p>B主机首先接收到比特流，然后层层处理拆包（去掉包头包尾的控制信息），层层连接，到传输层的时候，即发起TCP的三次握手，建立TCP连接后A发起http请求，即把请求报文发给B主机，B主机响应http请求，发回响应报文，A的浏览器得到html代码，解析并请求其中资源，浏览器对页面渲染呈献给用户。</p>
 
           </div>
 
@@ -641,6 +694,28 @@ TCP连接在发送后将仍然保持打开状态，于是，浏览器可以继�
 										<li class="nav-item">
 						 					<a class="nav-link" href="#http%e5%8d%8f%e8%ae%ae%e6%a0%88%e4%b8%ad%e5%90%84%e5%b1%82%e6%95%b0%e6%8d%ae%e6%b5%81">
 												 HTTP协议栈中各层数据流
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#%e6%80%bb%e7%bb%93">
+												 总结
 											</a>
 										</li>
 						 
