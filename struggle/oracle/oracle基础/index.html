@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="zn-Hans">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  <meta name="author" content="Heroine77">
+  <meta name="description" content="Oracle安装过程遇到的问题及客户端工具的使用，安完了就不配图了">
+  
+  <meta property="og:title" content="Oracle基础" />
+<meta property="og:description" content="Oracle安装过程遇到的问题及客户端工具的使用，安完了就不配图了" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://heroine7.github.io/struggle/oracle/oracle%E5%9F%BA%E7%A1%80/" />
+<meta property="article:published_time" content="2020-05-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-05-20T00:00:00+00:00" /><meta property="og:see_also" content="https://heroine7.github.io/struggle/oracle/oracle%E4%B8%80/" /><meta property="og:see_also" content="https://heroine7.github.io/struggle/python/python_1/" /><meta property="og:see_also" content="https://heroine7.github.io/struggle/http%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/" /><meta property="og:see_also" content="https://heroine7.github.io/struggle/markdown%E5%9F%BA%E7%A1%80/" />
+
+
+
+  <title>
+  
+       Oracle基础 | Heroine77 
+  
+  </title>
+
+  <link rel="canonical" href="https://heroine7.github.io/struggle/oracle/oracle%E5%9F%BA%E7%A1%80/">
+
+  
+  
+
+  
+  <link href="https://heroine7.github.io/css/vendors-extensions/fontawesome/all.min.css" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:300,400,500,600">
+  <link href="https://heroine7.github.io/css/font.css" rel="stylesheet"> 
+    
+  
+  <link href="https://heroine7.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
+  <link href="https://heroine7.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet"> 
+  <link href="https://heroine7.github.io/css/vendors/mdb/style.min.css" rel="stylesheet"> 
+  <link href="https://heroine7.github.io/css/main.css" rel="stylesheet">
+
+
+  
+  <link rel="shortcut icon"
+  
+      href="https://heroine7.github.io/img/qiqi.png"
+  
+  >
+
+
+  
+  
+
+  <style type="text/css">
+      @media (min-width: 800px) and (max-width: 850px) {
+              .navbar:not(.top-nav-collapse) {
+                  background: #1C2331!important;
+              }
+          }
+  </style>
+
+
+  
+    
+    <link rel="stylesheet" href="https://heroine7.github.io/js/vendors/katex/katex.min.css">
+  
+  
+
+  
+    
+    <link rel="stylesheet" href="https://heroine7.github.io/css/vendors/highlight/github-gist.css">
+  
+
+</head>
+
+  <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
+  
+    
+    
+
+    
+      
+
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+
+      
+      <a class="navbar-brand" href="https://heroine7.github.io">
+          
+        <img class="avatar" src="https://heroine7.github.io/img/qiqi.png" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+        
+        <strong> Heroine77</strong>
+      </a>
+
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+        <ul class="navbar-nav mr-auto ">
+          <li class="nav-item ">
+            <a class="nav-link" href="https://heroine7.github.io">Home</a>
+          </li>
+             
+            <li class="nav-item ">
+              <a class="nav-link" href="https://heroine7.github.io/struggle/" >Struggle  </a>
+            </li>
+          
+             
+            <li class="nav-item ">
+              <a class="nav-link" href="https://heroine7.github.io/feelings/" >Feelings  </a>
+            </li>
+          
+             
+            <li class="nav-item ">
+              <a class="nav-link" href="https://heroine7.github.io/about/" >About  </a>
+            </li>
+          
+          
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  
+ 
+      
+ 
+
+
+
+
+
+
+<div id="site-header" class="carousel slide carousel-fade" data-ride="carousel" style="height: 18rem;" >  
+
+  
+  
+  
+
+  
+  <div class="carousel-inner" role="listbox">
+    
+      
+
+        
+        <div class="carousel-item active">
+          <div class="view" style="background-image: url('https://heroine7.github.io/img/header-slides/2011942.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+              
+              
+              
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://heroine7.github.io/img/header-slides//2011951.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+
+  
+  </div>
+  
+
+  
+  <div class="carousel-content text-center white-text wow fadeIn">
+    <div class="row mx-0 headfont mt-3 pt-4">
+      
+      <div class="col-12 col-sm-5 align-middle">
+        <a href="https://heroine7.github.io">
+          
+            <img class="pull-right avatar avatar-md" src="https://heroine7.github.io/img/a.jpg" alt="" >
+          
+        </a>
+      </div>
+      
+      <div class="col-12 col-sm-7 text-left pl-2">
+        <a href="https://heroine7.github.io">
+          <h1 class="mb-2 h1" style="font-weight: 300;" >
+            <strong>Heroine77</strong>
+          </h1>
+        </a>
+        
+
+             
+        <div class="mt-2" style="font-size: 1rem; color: white;">
+            
+              <a href="//github.com/Heroine7" target="_blank" rel="noopener"><i class="fab fa-github pr-1" aria-hidden="true"></i></a>    
+            
+            
+              <a href="//linkedin.com/in/you" target="_blank" rel="noopener"><i class="fab fa-linkedin pr-1" aria-hidden="true"></i></a>
+            
+
+            
+              <a href="//facebook.com/you" target="_blank" rel="noopener"><i class="fab fa-facebook pr-1" aria-hidden="true"></i></a>
+            
+
+            
+            <a href="//google.com/you" target="_blank" rel="noopener"><i class="fab fa-google-plus pr-1" aria-hidden="true"></i></a>
+            
+
+            
+                <a href="//twitter.com/you" target="_blank" rel="noopener"><i class="fab fa-twitter pr-1" aria-hidden="true"></i></a>
+            
+
+            
+                <a href="//instagram.com/you" target="_blank" rel="noopener"><i class="fab fa-instagram pr-1" aria-hidden="true"></i></a>
+            
+    
+            
+                <a href="//px500" target="_blank" rel="noopener"><i class="fab fa-500px pr-1" aria-hidden="true"></i></a>
+            
+    
+        
+            
+                <a href="mailto:1683209559@qq.com"><i class="far fa-envelope-open pr-1" aria-hidden="true"></i></a>
+            
+    
+            
+
+            
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+  
+  
+
+</div>
+  
+    
+
+    
+  
+  <main class="post-main-wrapper">
+    
+    
+    <div class="row">
+
+      
+
+      
+      <div class="col-md-10">
+      
+
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
+
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="https://heroine7.github.io/categories/%E8%8F%9C%E8%8F%9C%E4%BD%A0%E8%AF%A5%E5%8A%AA%E5%8A%9B%E5%91%80"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> 菜菜你该努力呀 </a></li>
+      
+    
+    
+      
+        <li><a href="https://heroine7.github.io/series/%E6%88%91%E7%88%B1%E5%AD%A6%E4%B9%A0"><i class="fas fa-bookmark pr-1" aria-hidden="true"></i>我爱学习</a></li>
+      
+    
+  </ul>
+
+  <div class="px-4 post-heading">Oracle基础</div>
+
+  <ul class="post-meta li-x mt-1">
+    
+      <li>May 20, 2020</li>
+    
+
+    
+      <li class="middot"></li>
+      <li>4 minutes read</li>
+    
+  </ul>
+  
+    <div class="view">
+      <img src="https://heroine7.github.io/images/struggle/2020-05/1001028.jpg" />
+    </div>
+  
+
+</div>
+
+
+          <div class="post-content markdown">
+            <h2 id="安装步骤">安装步骤</h2>
+<ol>
+<li>在oracle 11g的几个版本中，企业版安装的选项比较全面，所以我们选择企业版安装，<a href="https://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html">官方下载地址</a>，选择合适自己电脑版本的安装包呀</li>
+<li>下载完成，解压两个压缩包到同一目录（默认：database）</li>
+<li>双击解压目录下的setuo.exe开始安装，静静地等待几秒钟后会弹出一个<code>环境不满足最低要求，是否确实要继续？</code>，点击是，直接安装就可以。</li>
+<li>然后到达<code>配置安全更新</code>页面，这会让你输入邮箱用于接受有关安装更新问题的通知，**注意了！：**去掉那个勾（我希望巴拉巴拉。。。）邮箱也不用填，咱又没有Oracle的metlink账户，怎么可能连接成功呢！Oracle的metlink账户是要付费使用的，而且米米还不是一点点的！所以只要不填写直接走下一步就OK了。</li>
+<li>然后到达<code>选择安装选项</code>，选择“创建和配置数据库”选项，然后点击下一步</li>
+<li>然后是系统类”界面下选择“桌面类”，然后单击“下一步”安装。</li>
+<li>进入“典型安装配置”界面，根据个人需要更改各项路径（<strong>注意路径中不要有中文，后面会报错</strong>）；随后输入管理口令并确认，需要注意的事，输入口令要求是至少包含大小写字母和数字的复杂密码形式,（**注意啦！**不要用数字或者符号开头，用大小写字母都行，不然后面会报错，账户会被锁定）</li>
+<li>在“概要”界面中，显示安装信息的概要情况，然后点击“完成”按钮，等待程序的安装，安装过程可能会遇到<code>ORA-00922：选项缺失或无效问题解决办法</code>,这就是在设置实例密码时以数字开头了，如果忽略该问题继续的话，就会遇到<code>ORA-28000: 账户锁定</code>,如果继续忽略的话，安装完成的时候会有更改口令的选项，进去以后也可以解锁账号，之后再检查账号状态时候就是open了，应该不会有问题了</li>
+<li>过程中可能还会遇到<code>启动服务出现错误，找不到OracleMTSRecoveryService</code>，解决办法：<code>cmd-输入regedit</code>运行注册表，然后到HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services，找到OracleMTSRecoveryService及OracleRemExecService，查看ImagePath对应路径是否正确,如果发现dbhome_2直接改为dbhome_1，可能是之前没卸载干净</li>
+</ol>
+<h2 id="客户端工具">客户端工具</h2>
+<p>SQL Plus工具：是 Oracle 系统默认安装的自带的一个客户端工具。在 Windows cmd 命令行中输入“sqlplus”命令，启动该工具，输入system和密码即可登录到本地数据库</p>
+<p>可以通过命令行进行数据库链接：<code>conn 用户名/密码@服务器连接字符串 as 连接身份</code>,例如：<code>conn sys/****@127.0.0.1:1521/orcl as sysdba</code>，配置本地网络服务名后可直接通过网络服务名连接数据库，<code>conn sys/密码@网络服务名 as 身份名</code>，例如：<code>conn sys/666666@dengqi as sysdba</code></p>
+<p><strong>oracle的三种身份：</strong></p>
+<ol>
+<li>sysdba:数据库管理员身份。权限：打开（关闭）数据库服务器、备份（恢复）数据库、日志功能、会话限制、数据库管理功能等。例如：sys用户必须用sysdba才能登陆，system用户用普通用户就可以登陆。</li>
+<li>sysoper:数据库操作员身份 。权限：打开（关闭）数据库服务器、备份（恢复）数据库、日志功能、会话限制。</li>
+<li>normal:普通用户。权限：操作该用户下的数据对象和数据查询，默认的身份是normal用户。</li>
+</ol>
+<p>为了使用规范，可以先修改一下设置错误的密码：<code>alter user 数据库连接用户名 identified by 新密码;</code>（<strong>注</strong>：1.分号不能忘；2.密码若为数字和字母组合，且数字开头，密码要用双引号）</p>
+<p>在实际Oracle的开发过程当中，经常会使用到一个第三方开发工具<a href="https://www.oraclejsq.com/jsq/ueditor/fileDownLoad.do?fileUrl=c:/static/file/1537186072906_824102.rar">PL/SQL Developer</a>，因为SQLPLUS开发过程当中操作相对比较麻烦，不具有友好的可视化操作，因此，使用“PL/SQL Developer”开发工具替代SQLPLUS来进行oracle数据库开发，他的运行也需要安装Oracle客户端软件，并且可以通过本地网络服务配置向导配置好网络服务名，可以使用服务名直接连接登录</p>
+<p>我还没安装，好麻烦的样子，嘿嘿</p>
+<p>数据库默认情况下是打开状态，可以通过<code>shutdown immediate</code>关闭数据库，但是按照教程通过<code>startup open</code> 就打不开了。</p>
+<p>具体错误：通过用户名和密码登录时会报错，“ORA-01034 - Oracle not available”和“ORA-27101 - shared memory realm does not exist”。</p>
+<p>解决办法：该错误表示实例没有启动</p>
+<ol>
+<li>sqlplus /nolog</li>
+<li>connect / as sysdba，连接到空闲例程</li>
+<li>startup</li>
+</ol>
+
+          </div>
+
+          
+          <div class="row">
+            <div class="col-md-8">
+            
+              <div class="mb-5">
+                
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://heroine7.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://heroine7.github.io/tags/oracle" role="button">Oracle </a></li>
+      
+    
+  </div>
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=https://heroine7.github.io/struggle/python/python_1/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>Python基础</span>
+                  </div>
+                </a>
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+                <a href=https://heroine7.github.io/struggle/oracle/oracle%E4%B8%80/ class="post-meta">Next
+                  <div class="pt-2 pb-5 flex-reverse">
+                    <i class="fas fa-angle-right text-grey font-weight-bold ml-2 active-color"></i>
+                    <span>Oracle（一）</span>
+                  </div>
+                </a>
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      
+	
+	
+	
+	
+		
+		
+		
+	
+
+		
+		<div class="col-md-2 pl-0">
+
+			
+			<div id="page-scrollspy" class="toc-nav">
+				
+				<ul class="nav nav-pills ml-0">
+					
+					<li class="nav-item pb-3 text-center">
+						<span class="font-weight-bold mb-2">- CATALOG - </span>
+					</li>
+
+					
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#%e5%ae%89%e8%a3%85%e6%ad%a5%e9%aa%a4">
+												 安装步骤
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#%e5%ae%a2%e6%88%b7%e7%ab%af%e5%b7%a5%e5%85%b7">
+												 客户端工具
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+
+				</ul>
+			</div>
+			
+
+		</div>
+		
+	
+
+    </div>
+    
+
+
+  </main>
+  
+
+
+    
+    
+
+<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+
+  
+  <div class="pb-2 mt-5 pt-5">
+    
+      <a href="//github.com/Heroine7 " target="_blank" rel="noopener"><i class="fab fa-github mr-3" aria-hidden="true"></i></a>    
+    
+    
+      <a href="//linkedin.com/in/you" target="_blank" rel="noopener"><i class="fab fa-linkedin-in mr-3" aria-hidden="true"></i></a>
+    
+
+    
+      <a href="//facebook.com/you" target="_blank" rel="noopener"><i class="fab fa-facebook-f mr-3" aria-hidden="true"></i></a>
+    
+
+    
+    <a href="//google.com/you" target="_blank" rel="noopener"><i class="fab fa-google-plus-g mr-3" aria-hidden="true"></i></a>
+    
+
+    
+        <a href="//twitter.com/you" target="_blank" rel="noopener"><i class="fab fa-twitter mr-3" aria-hidden="true"></i></a>
+    
+
+    
+        <a href="//instagram.com/you" target="_blank" rel="noopener"><i class="fab fa-instagram mr-3" aria-hidden="true"></i></a>
+    
+
+    
+        <a href="//px500" target="_blank" rel="noopener"><i class="fab fa-500px mr-3" aria-hidden="true"></i></a>
+    
+
+
+    
+        <a href="mailto:1683209559@qq.com"><i class="far fa-envelope-open mr-3" aria-hidden="true"></i></a>
+    
+
+    
+
+    
+
+  </div>
+  
+
+  
+  <div class="copyright py-4">
+    
+    <span>  2016 - 2020 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+  </div>
+  
+
+</footer>
+
+
+    
+
+
+
+
+
+
+<script type="text/javascript" src="https://heroine7.github.io/js/vendors/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://heroine7.github.io/js/vendors/jquery/jquery.smooth-scroll.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://heroine7.github.io/js/vendors/popper.min.js"></script>
+<script type="text/javascript" src="https://heroine7.github.io/js/vendors/holder.min.js"></script>
+<script type="text/javascript" src="https://heroine7.github.io/js/vendors-extensions/bootstrap4/bootstrap.js" ></script>
+
+<script type="text/javascript" src="https://heroine7.github.io/js/vendors/mdb/mdb.min.js"></script>
+
+<script type="text/javascript" src="https://heroine7.github.io/js/main.js"></script>
+
+
+
+  
+  <script src="https://heroine7.github.io/js/vendors/highlight.pack.js"> </script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+ 
+  <script src="https://heroine7.github.io/js/vendors/katex/katex.min.js"> </script>
+  <script src="https://heroine7.github.io/js/vendors/katex/contrib/auto-render.min.js"></script>
+
+  <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          renderMathInElement(document.body);
+      });
+  </script>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  
+  new WOW().init();
+</script>
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="zn-Hans">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  <meta name="author" content="Heroine77">
+  <meta name="description" content="Python基础知识">
+  
+  <meta property="og:title" content="Python基础" />
+<meta property="og:description" content="Python基础知识" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://heroine7.github.io/struggle/python/python_1/" />
+<meta property="article:published_time" content="2020-05-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-05-14T00:00:00+00:00" /><meta property="og:see_also" content="https://heroine7.github.io/struggle/oracle/oracle%E4%B8%80/" /><meta property="og:see_also" content="https://heroine7.github.io/struggle/oracle/oracle%E5%9F%BA%E7%A1%80/" /><meta property="og:see_also" content="https://heroine7.github.io/struggle/http%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/" /><meta property="og:see_also" content="https://heroine7.github.io/struggle/markdown%E5%9F%BA%E7%A1%80/" />
+
+
+
+  <title>
+  
+       Python基础 | Heroine77 
+  
+  </title>
+
+  <link rel="canonical" href="https://heroine7.github.io/struggle/python/python_1/">
+
+  
+  
+
+  
+  <link href="https://heroine7.github.io/css/vendors-extensions/fontawesome/all.min.css" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:300,400,500,600">
+  <link href="https://heroine7.github.io/css/font.css" rel="stylesheet"> 
+    
+  
+  <link href="https://heroine7.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
+  <link href="https://heroine7.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet"> 
+  <link href="https://heroine7.github.io/css/vendors/mdb/style.min.css" rel="stylesheet"> 
+  <link href="https://heroine7.github.io/css/main.css" rel="stylesheet">
+
+
+  
+  <link rel="shortcut icon"
+  
+      href="https://heroine7.github.io/img/qiqi.png"
+  
+  >
+
+
+  
+  
+
+  <style type="text/css">
+      @media (min-width: 800px) and (max-width: 850px) {
+              .navbar:not(.top-nav-collapse) {
+                  background: #1C2331!important;
+              }
+          }
+  </style>
+
+
+  
+    
+    <link rel="stylesheet" href="https://heroine7.github.io/js/vendors/katex/katex.min.css">
+  
+  
+
+  
+    
+    <link rel="stylesheet" href="https://heroine7.github.io/css/vendors/highlight/github-gist.css">
+  
+
+</head>
+
+  <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
+  
+    
+    
+
+    
+      
+
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+
+      
+      <a class="navbar-brand" href="https://heroine7.github.io">
+          
+        <img class="avatar" src="https://heroine7.github.io/img/qiqi.png" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+        
+        <strong> Heroine77</strong>
+      </a>
+
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+        <ul class="navbar-nav mr-auto ">
+          <li class="nav-item ">
+            <a class="nav-link" href="https://heroine7.github.io">Home</a>
+          </li>
+             
+            <li class="nav-item ">
+              <a class="nav-link" href="https://heroine7.github.io/struggle/" >Struggle  </a>
+            </li>
+          
+             
+            <li class="nav-item ">
+              <a class="nav-link" href="https://heroine7.github.io/feelings/" >Feelings  </a>
+            </li>
+          
+             
+            <li class="nav-item ">
+              <a class="nav-link" href="https://heroine7.github.io/about/" >About  </a>
+            </li>
+          
+          
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  
+ 
+      
+ 
+
+
+
+
+
+
+<div id="site-header" class="carousel slide carousel-fade" data-ride="carousel" style="height: 18rem;" >  
+
+  
+  
+  
+
+  
+  <div class="carousel-inner" role="listbox">
+    
+      
+
+        
+        <div class="carousel-item active">
+          <div class="view" style="background-image: url('https://heroine7.github.io/img/header-slides/2011942.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+              
+              
+              
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://heroine7.github.io/img/header-slides//2011951.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+
+  
+  </div>
+  
+
+  
+  <div class="carousel-content text-center white-text wow fadeIn">
+    <div class="row mx-0 headfont mt-3 pt-4">
+      
+      <div class="col-12 col-sm-5 align-middle">
+        <a href="https://heroine7.github.io">
+          
+            <img class="pull-right avatar avatar-md" src="https://heroine7.github.io/img/a.jpg" alt="" >
+          
+        </a>
+      </div>
+      
+      <div class="col-12 col-sm-7 text-left pl-2">
+        <a href="https://heroine7.github.io">
+          <h1 class="mb-2 h1" style="font-weight: 300;" >
+            <strong>Heroine77</strong>
+          </h1>
+        </a>
+        
+
+             
+        <div class="mt-2" style="font-size: 1rem; color: white;">
+            
+              <a href="//github.com/Heroine7" target="_blank" rel="noopener"><i class="fab fa-github pr-1" aria-hidden="true"></i></a>    
+            
+            
+              <a href="//linkedin.com/in/you" target="_blank" rel="noopener"><i class="fab fa-linkedin pr-1" aria-hidden="true"></i></a>
+            
+
+            
+              <a href="//facebook.com/you" target="_blank" rel="noopener"><i class="fab fa-facebook pr-1" aria-hidden="true"></i></a>
+            
+
+            
+            <a href="//google.com/you" target="_blank" rel="noopener"><i class="fab fa-google-plus pr-1" aria-hidden="true"></i></a>
+            
+
+            
+                <a href="//twitter.com/you" target="_blank" rel="noopener"><i class="fab fa-twitter pr-1" aria-hidden="true"></i></a>
+            
+
+            
+                <a href="//instagram.com/you" target="_blank" rel="noopener"><i class="fab fa-instagram pr-1" aria-hidden="true"></i></a>
+            
+    
+            
+                <a href="//px500" target="_blank" rel="noopener"><i class="fab fa-500px pr-1" aria-hidden="true"></i></a>
+            
+    
+        
+            
+                <a href="mailto:1683209559@qq.com"><i class="far fa-envelope-open pr-1" aria-hidden="true"></i></a>
+            
+    
+            
+
+            
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+  
+  
+
+</div>
+  
+    
+
+    
+  
+  <main class="post-main-wrapper">
+    
+    
+    <div class="row">
+
+      
+
+      
+      <div class="col-md-10">
+      
+
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
+
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="https://heroine7.github.io/categories/%E8%8F%9C%E8%8F%9C%E4%BD%A0%E8%AF%A5%E5%8A%AA%E5%8A%9B%E5%91%80"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> 菜菜你该努力呀 </a></li>
+      
+    
+    
+      
+        <li><a href="https://heroine7.github.io/series/%E6%88%91%E7%88%B1%E5%AD%A6%E4%B9%A0"><i class="fas fa-bookmark pr-1" aria-hidden="true"></i>我爱学习</a></li>
+      
+    
+  </ul>
+
+  <div class="px-4 post-heading">Python基础</div>
+
+  <ul class="post-meta li-x mt-1">
+    
+      <li>May 14, 2020</li>
+    
+
+    
+      <li class="middot"></li>
+      <li>5 minutes read</li>
+    
+  </ul>
+  
+    <div class="view">
+      <img src="https://heroine7.github.io/images/struggle/2020-04-29/2001759.jpg" />
+    </div>
+  
+
+</div>
+
+
+          <div class="post-content markdown">
+            <h2 id="必备常识">必备常识</h2>
+<p><strong>注释：</strong> 单行：#；多行：多个#或一对&quot;&ldquo;&ldquo;或一对&rsquo;&rsquo;&rsquo;   <br>
+<strong>行与缩进：</strong> 使用缩进来表示代码块，同一个代码块的语句必须包含相同的缩进空格数  <br>
+<strong>多行语句：</strong> 使用反斜杠<code>\</code>来实现多行语句,在 [], {}, 或 () 中的多行语句，不需要使用反斜杠<code>\</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">total</span><span class="o">=</span><span class="n">a</span><span class="o">+</span>\    
+      <span class="n">b</span><span class="o">+</span>\
+      <span class="n">c</span>
+</code></pre></div><p><strong>数字类型：</strong> int(长整型)，bool(True/False),float(1.23,3E-2),complex(复数1+2j，1.1+2.2j)  <br>
+<strong>字符串（String）:</strong></p>
+<ol>
+<li>Python中单引号和双引号完全相同。</li>
+<li>使用三引号（&lsquo;&lsquo;&lsquo;或&rdquo;&quot;&quot;）可以制定一个多行字符串</li>
+<li>转义符&rsquo;'</li>
+<li>反斜杠可以用来转义，使用r可以让反斜杠不发生转义，如r&quot;hello world \n&quot;则\n会显示，并不是换行</li>
+<li>按字面意思级联字符串，如&quot;this&quot;&ldquo;is&quot;&ldquo;string&quot;会被自动转换为this is string</li>
+<li>字符串可以用+运算符连接在一起，用*云算法重复</li>
+<li>字符串有两种索引方式：从左往右以0开始，从右往左以-1开始</li>
+<li>字符串不能改变</li>
+<li>没有单独的字符类型，一个字符就是长度为1的字符串</li>
+<li>字符串额截取的语法格式：<code>变量[头下标：尾下标：步长]</code>
+<strong>空行：</strong> 函数之间或类的方法之间用空行分隔，表示一段新的代码的开始。类和函数入口之间也用一行空行分隔，以突出函数入口的开始。    <br>
+<strong>等待用户输入：</strong> `input(&quot;\n\n按下enter键后退出。&quot;)   <br>
+Python可以在同一行中使用多条语句，语句之间使用分号(;)分割;  <br>
+缩进相同的一组语句构成一个代码块，我们称之代码组。
+像if、while、def和class这样的复合语句，首行以关键字开始，以冒号( : )结束，该行之后的一行或多行代码构成代码组。我们将首行及后面的代码组称为一个子句(clause)。  <br>
+<strong>Print 输出:</strong> print 默认输出是换行的，如果要实现不换行需要在变量末尾加上 end=&rdquo;&quot;：  <br>
+<strong>import 与 from&hellip;import:</strong></li>
+<li>用<code>import</code>或<code>from ...import</code>来导入相应的模块</li>
+<li>将整个模块<code>somemodule</code>导入，格式为：<code>import somemodule</code></li>
+<li>从某个模块中导入某个函数，格式：<code>from somemodule import somefunction</code></li>
+<li>从某个模块中导入多个函数，格式：<code>from somemodule import firstfunc,secondfunc,thirdfunc</code></li>
+<li>将某个模块中的全部函数导入，格式：<code>from somemodule import *</code> <br>
+Python可以使用-h参数查看各参数帮助信息</li>
+</ol>
+<h2 id="基本数据类型">基本数据类型</h2>
+<p>Python中的变量不需要声明，每个变量在使用前都必须赋值，赋值后变量才会被创建
+<strong>标准数据类型：</strong> Number(数字)、String(字符串)、List(列表)、Tuple(元组)、Set(集合)、Dictionary(字典)，前三个不可变数据，后三个可变数据  <br>
+<strong>Number（数字）：</strong> 支持int、float、bool、complex(复数)。只有一种整数类型int，表示长整型，type()函数可以用来查询变量所指的对象类型。也可以用isinstance(),例如：<code>a=100;isinstance(a,int)</code>，返回true/false;二者的区别在于：type不会认为子类是一种父类类型，isinstance会认为子类是一种父类类型。del删除单个或多个对象  <br>
+数值运算：2/4得到浮点数，2//4得到一个整数，%取余，**乘方
+<strong>String(字符串)：</strong> 字符串用<code>'</code>、<code>&quot;</code>括起来，同时使用<code>\</code>转移特殊字符 <br>
+字符串截取：<code>变量[头下标：尾下标]</code>，索引值以0开始，-1为从末尾的开始位置；截取从前面以1开始，从后面以-1（倒数第一个）</p>
+<h2 id="list列表">List(列表)</h2>
+<p>列表中元素的类型可以不相同，它支持数字，字符串甚至可以包含列表（所谓嵌套）。写在<code>[]</code>之间，用逗号分隔开的元素列表，截取列表：<code>变量[头下标：尾下标]</code>，或者：<code>变量[头下标：尾下标：步长]</code>，步长就是中间的间隔数，达到相应的间隔就取出那个元素；索引值以 0 为开始值，-1 为从末尾的开始位置。加号 + 是列表连接运算符，星号 * 是重复操作，如果第三个参数为负数表示逆向读取。</p>
+<div class="highlight"><pre class="chroma"><code class="language-Python" data-lang="Python"><span class="k">def</span> <span class="nf">reverseWords</span><span class="p">(</span><span class="nb">input</span><span class="p">):</span>
+      <span class="c1"># 通过空格将字符串分开，把各个单词分隔成列表</span>
+      <span class="n">inputWords</span><span class="o">=</span><span class="nb">input</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">)</span>
+      <span class="c1"># 反转字符串</span>
+      <span class="c1"># 第一个-1表示最后一个元素，第二个参数为空，表示移动到列表末尾，第三个参数为步长，-1表示逆向</span>
+      <span class="n">inputWords</span><span class="o">=</span><span class="n">inputWords</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+      <span class="c1"># 重新组合字符串</span>
+      <span class="n">output</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">inputWords</span><span class="p">)</span>
+      <span class="k">return</span> <span class="n">output</span>
+      <span class="nb">input</span><span class="o">=</span><span class="s1">&#39;I love you&#39;</span>
+      <span class="n">rw</span><span class="o">=</span><span class="n">reverseWords</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+      <span class="k">print</span><span class="p">(</span><span class="n">rw</span><span class="p">)</span>
+</code></pre></div><p>输出结果为<code>you love I</code></p>
+<h2 id="tuple元组">Tuple(元组)</h2>
+<p>元组（tuple）与列表类似，不同之处在于元组的元素不能修改，但它可以包含可变的对象，比如list列表。元组写在小括号 () 里，元素之间用逗号隔开，元组中的元素类型也可以不相同  <br>
+tup1=()#空元组，tup2=(20,)#一个元素，需要在元素后添加逗号</p>
+<h2 id="set集合">Set(集合)</h2>
+<p>集合（set）是由一个或数个形态各异的大小整体组成的，构成集合的事物或对象称作元素或是成员。基本功能是进行成员关系测试和删除重复元素。可以使用大括号 { } 或者 set() 函数创建集合，注意：创建一个空集合必须用 <code>set() </code>而不是 { }，因为 { } 是用来创建一个空字典。</p>
+
+          </div>
+
+          
+          <div class="row">
+            <div class="col-md-8">
+            
+              <div class="mb-5">
+                
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://heroine7.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://heroine7.github.io/tags/python3" role="button">Python3 </a></li>
+      
+    
+      <li><a href="https://heroine7.github.io/tags/%E5%B0%8F%E7%99%BD%E5%A3%81%E5%92%9A" role="button">小白壁咚 </a></li>
+      
+    
+  </div>
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=https://heroine7.github.io/struggle/http%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>HTTP基本原理</span>
+                  </div>
+                </a>
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+                <a href=https://heroine7.github.io/struggle/oracle/oracle%E5%9F%BA%E7%A1%80/ class="post-meta">Next
+                  <div class="pt-2 pb-5 flex-reverse">
+                    <i class="fas fa-angle-right text-grey font-weight-bold ml-2 active-color"></i>
+                    <span>Oracle基础</span>
+                  </div>
+                </a>
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      
+	
+	
+	
+	
+		
+		
+		
+	
+
+		
+		<div class="col-md-2 pl-0">
+
+			
+			<div id="page-scrollspy" class="toc-nav">
+				
+				<ul class="nav nav-pills ml-0">
+					
+					<li class="nav-item pb-3 text-center">
+						<span class="font-weight-bold mb-2">- CATALOG - </span>
+					</li>
+
+					
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#%e5%bf%85%e5%a4%87%e5%b8%b8%e8%af%86">
+												 必备常识
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#%e5%9f%ba%e6%9c%ac%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b">
+												 基本数据类型
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#list%e5%88%97%e8%a1%a8">
+												 List(列表)
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#tuple%e5%85%83%e7%bb%84">
+												 Tuple(元组)
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#set%e9%9b%86%e5%90%88">
+												 Set(集合)
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+
+				</ul>
+			</div>
+			
+
+		</div>
+		
+	
+
+    </div>
+    
+
+
+  </main>
+  
+
+
+    
+    
+
+<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+
+  
+  <div class="pb-2 mt-5 pt-5">
+    
+      <a href="//github.com/Heroine7 " target="_blank" rel="noopener"><i class="fab fa-github mr-3" aria-hidden="true"></i></a>    
+    
+    
+      <a href="//linkedin.com/in/you" target="_blank" rel="noopener"><i class="fab fa-linkedin-in mr-3" aria-hidden="true"></i></a>
+    
+
+    
+      <a href="//facebook.com/you" target="_blank" rel="noopener"><i class="fab fa-facebook-f mr-3" aria-hidden="true"></i></a>
+    
+
+    
+    <a href="//google.com/you" target="_blank" rel="noopener"><i class="fab fa-google-plus-g mr-3" aria-hidden="true"></i></a>
+    
+
+    
+        <a href="//twitter.com/you" target="_blank" rel="noopener"><i class="fab fa-twitter mr-3" aria-hidden="true"></i></a>
+    
+
+    
+        <a href="//instagram.com/you" target="_blank" rel="noopener"><i class="fab fa-instagram mr-3" aria-hidden="true"></i></a>
+    
+
+    
+        <a href="//px500" target="_blank" rel="noopener"><i class="fab fa-500px mr-3" aria-hidden="true"></i></a>
+    
+
+
+    
+        <a href="mailto:1683209559@qq.com"><i class="far fa-envelope-open mr-3" aria-hidden="true"></i></a>
+    
+
+    
+
+    
+
+  </div>
+  
+
+  
+  <div class="copyright py-4">
+    
+    <span>  2016 - 2020 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+  </div>
+  
+
+</footer>
+
+
+    
+
+
+
+
+
+
+<script type="text/javascript" src="https://heroine7.github.io/js/vendors/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://heroine7.github.io/js/vendors/jquery/jquery.smooth-scroll.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://heroine7.github.io/js/vendors/popper.min.js"></script>
+<script type="text/javascript" src="https://heroine7.github.io/js/vendors/holder.min.js"></script>
+<script type="text/javascript" src="https://heroine7.github.io/js/vendors-extensions/bootstrap4/bootstrap.js" ></script>
+
+<script type="text/javascript" src="https://heroine7.github.io/js/vendors/mdb/mdb.min.js"></script>
+
+<script type="text/javascript" src="https://heroine7.github.io/js/main.js"></script>
+
+
+
+  
+  <script src="https://heroine7.github.io/js/vendors/highlight.pack.js"> </script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+ 
+  <script src="https://heroine7.github.io/js/vendors/katex/katex.min.js"> </script>
+  <script src="https://heroine7.github.io/js/vendors/katex/contrib/auto-render.min.js"></script>
+
+  <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          renderMathInElement(document.body);
+      });
+  </script>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  
+  new WOW().init();
+</script>
+
+
+
+
+  </body>
+</html>
